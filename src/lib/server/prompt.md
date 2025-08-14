@@ -33,7 +33,7 @@ Single JSON object only:
 - Paragraph 3: Conclusions and practical implications
 - Use **bold** for crucial terms
 
-**points**: Most important actionable insights. **Bold** key terms.
+**points**: Most important actionable insights. **Bold** key terms. Try to keep 4/5 points at least.
 
 **coreTerms**: Central terms/concepts mentioned. Use `[]` if none.
 
