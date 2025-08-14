@@ -1,0 +1,80 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+
+@font-face {
+    font-family: 'Inter';
+    src: url("$lib/assets/fonts/InterVariable.woff2") format('woff2');
+    font-display: swap;
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter Fallback';
+    src: local("Arial");
+    ascent-override: 89.79%;
+    descent-override: 22.36%;
+    line-gap-override: 0.00%;
+    size-adjust: 107.89%;
+}
+
+@theme {
+    --font-sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
+    --font-mono: 'Space Mono', monospace;
+}
+
+@layer base {
+    html {
+        @apply bg-zinc-950;
+        overflow-y: scroll;
+        scrollbar-gutter: stable;
+        font-feature-settings: "cv02","cv03","cv04","cv11";
+    }
+
+    body {
+        @apply text-zinc-400 scroll-smooth;
+
+        background: 
+            radial-gradient(circle at 25% 25%, rgba(120, 113, 255, 0.03) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(236, 72, 153, 0.02) 0%, transparent 50%),
+            radial-gradient(circle at 90% 10%, rgba(34, 197, 94, 0.025) 0%, transparent 50%),
+            radial-gradient(circle at 10% 90%, rgba(249, 115, 22, 0.02) 0%, transparent 50%),
+
+            linear-gradient(135deg, rgba(139, 92, 246, 0.01) 0%, transparent 30%),
+            linear-gradient(-45deg, rgba(14, 165, 233, 0.015) 0%, transparent 25%),
+            linear-gradient(45deg, rgba(236, 72, 153, 0.008) 70%, transparent 100%),
+
+            linear-gradient(180deg, #0a0a0a 0%, #18181b 50%, #0f0f0f 100%);
+
+        background-attachment: fixed;
+    }
+
+    #nprogress .bar {
+        @apply bg-red-500!
+    }
+
+    /* For WebKit browsers (Chrome, Safari, Edge) */
+    ::-webkit-scrollbar {
+        width: 8px; /* or height for horizontal scroll */
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--color-zinc-900);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--color-zinc-700);
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-zinc-600);
+    }
+
+    /* For Firefox */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-zinc-700) var(--color-zinc-900);
+    }
+}

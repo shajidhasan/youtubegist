@@ -1,0 +1,44 @@
+{
+  "name": "youtubegist: Get Quick Summaries of YouTube Videos",
+  "short_name": "youtubegist",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0d",
+  "theme_color": "#0a0a0d",
+  "description": "youtubegist generates summaries of YouTube videos, great for getting a high-level understanding of lectures, podcasts, or news reports without watching the entire video.",
+  "share_target": {
+    "action": "/share-receiver/",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}
