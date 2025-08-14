@@ -1,15 +1,21 @@
 import { databases } from '$lib/server/appwrite.js';
 import { getSummary } from '$lib/server/summary.js';
 import { getVideoData } from '$lib/server/videoData.js';
+import { validateNonce } from '$lib/server/nonce.js';
 import type { SummaryData } from '$lib/types.js';
 import { error, json } from '@sveltejs/kit';
 import { ID } from 'node-appwrite';
 
 export const GET = async ({ url }) => {
     const videoId = url.searchParams.get('v');
+    const nonce = url.searchParams.get('nonce');
 
     if (!videoId || videoId.length !== 11) {
         return error(400, 'Bad YouTube video ID!');
+    }
+
+    if (!nonce || !validateNonce(nonce)) {
+        return error(401, 'Invalid or expired nonce!');
     }
 
     try {

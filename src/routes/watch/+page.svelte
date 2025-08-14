@@ -19,6 +19,9 @@
 	// Type definitions
 	import type { SummaryData, VideoMeta } from '$lib/types';
 
+	// Nonce utility
+	import { fetchWithNonce } from '$lib/client/nonce';
+
 	// Props
 	const { data } = $props();
 
@@ -39,7 +42,7 @@
 				return;
 			}
 
-			fetch(`/api/get-summary?v=${videoId}`)
+			fetchWithNonce(`/api/get-summary?v=${videoId}`)
 				.then(async (res) => {
 					if (!res.ok) {
 						// Try to get a more specific error message from the API response
