@@ -44,7 +44,7 @@ This project is open source and available under the [MIT License](LICENSE).
 If `youtubegist` has been helpful to you, consider supporting.
 
 - ☕ **[Buy me a coffee](https://buymeacoffee.com/sh4jid)** - Help fuel late-night coding sessions
-- 💝 **[Sponsor this project](https://github.com/sponsors/sh4jid)** - Support ongoing development and hosting costs
+- 💝 **[Sponsor this project](https://buymeacoffee.com/sh4jid/membership)** - Support ongoing development and hosting costs
 - ⭐ Or just star the repository :)
 
 Your support helps keep `youtubegist` free and accessible for everyone!
