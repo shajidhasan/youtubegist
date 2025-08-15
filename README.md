@@ -2,6 +2,8 @@
 
 `youtubegist` is a fast, open-source web app that transforms YouTube videos into concise, readable summaries. Skip the fluff and get straight to the key insights. I initially created this for myself because I spend a little too much there.
 
+Try it at **[youtubegist.com](https://youtubegist.com)**.
+
 ## Features
 
 - **⚡ Fast**: Get video summaries in seconds
@@ -9,10 +11,6 @@
 - **🔓 Open Source**: Fully transparent and community-driven
 - **📱 Installable PWA**: Share video into the PWA on your phone from YouTube app
 - **🚀 Easy Usage**: Just add `gist` after `youtube` in a URL
-
-## Try It Now
-
-**[youtubegist.com](https://youtubegist.com)**
 
 ## Run locally
 
@@ -33,7 +31,7 @@ pnpm dev
 
 ## Contributing
 
-This code is written in a haste so any PRs are welcome.
+PRs are welcome.
 
 ## License
 
