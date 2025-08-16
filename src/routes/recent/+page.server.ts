@@ -12,7 +12,7 @@ export const load: PageServerLoad = async () => {
             [
                 Query.orderDesc('$createdAt'),
                 Query.limit(50),
-                Query.select(['$id', 'title', 'videoId', '$createdAt'])
+                Query.select(['$id', 'title', 'videoId', '$createdAt', 'hits'])
             ]
         );
 
