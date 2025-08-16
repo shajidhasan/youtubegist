@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Logo from '$lib/components/logo.svelte';
+	import Logo from '$lib/components/shared/logo.svelte';
 	import HeartIcon from '@lucide/svelte/icons/heart';
 	import HelpCircleIcon from '@lucide/svelte/icons/help-circle';
 	import GithubIcon from '@lucide/svelte/icons/github';
@@ -11,7 +11,7 @@
 	}
 </script>
 
-<header class="sticky top-0 z-50 border-b border-zinc-800/50 bg-zinc-950/80 backdrop-blur-lg">
+<header class="sticky top-0 z-50 border-b border-zinc-800/50 bg-zinc-950/50 backdrop-blur-lg">
 	<nav class="container mx-auto flex max-w-3xl items-center justify-between px-4 py-4">
 		<!-- Logo Section -->
 		<a

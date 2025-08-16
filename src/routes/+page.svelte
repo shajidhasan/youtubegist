@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Logo from '$lib/components/logo.svelte';
+	import Logo from '$lib/components/shared/logo.svelte';
 	import YoutubeIcon from '@lucide/svelte/icons/youtube';
 	import ZapIcon from '@lucide/svelte/icons/zap';
 	import LightbulbIcon from '@lucide/svelte/icons/lightbulb';

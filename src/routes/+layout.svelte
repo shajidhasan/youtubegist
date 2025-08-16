@@ -4,8 +4,8 @@
 
 	import { navigating } from '$app/state';
 
-	import Navbar from '$lib/components/navbar.svelte';
-	import Footer from '$lib/components/footer.svelte';
+	import Navbar from '$lib/components/layout/navbar.svelte';
+	import Footer from '$lib/components/layout/footer.svelte';
 
 	import NProgress from 'nprogress';
 	import 'nprogress/nprogress.css';
