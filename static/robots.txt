@@ -1,2 +1,13 @@
 User-agent: *
 Allow: /
+Allow: /help
+Allow: /support
+
+# Disallow internal/testing pages
+Disallow: /recent
+Disallow: /watch
+Disallow: /share-receiver
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://youtubegist.com/sitemap.xml
