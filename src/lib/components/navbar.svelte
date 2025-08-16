@@ -72,9 +72,10 @@
 				target="_blank"
 				title="GitHub link"
 				rel="noopener noreferrer"
-				class="group flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200 hover:scale-105 hover:bg-white/10"
+				class="group flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-zinc-300 transition-all duration-200 hover:scale-105 hover:bg-white/10 hover:text-zinc-100"
 			>
 				<GithubIcon class="h-4 w-4 transition-colors duration-200 group-hover:text-zinc-100" />
+				<span class="hidden sm:block">GitHub</span>
 			</a>
 		</div>
 	</nav>
