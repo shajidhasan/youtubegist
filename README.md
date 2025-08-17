@@ -23,7 +23,7 @@ git clone https://github.com/shajidhasan/youtubegist.git
 cd youtubegist
 ```
 
-### 2. Set up Appwrite (Database & Auth)
+### 2. Set up Appwrite (Database for Caching)
 
 1. Go to [cloud.appwrite.io](https://cloud.appwrite.io) and create a free account
 2. Create a new project and note down your **Project ID**
