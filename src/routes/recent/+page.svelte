@@ -57,14 +57,14 @@
 							</a>
 						</h3>
 
-						<div class="flex items-center gap-4 text-sm text-zinc-500">
+						<div class="flex flex-col text-sm text-zinc-500 sm:flex-row sm:items-center sm:gap-4">
 							<div class="flex items-center gap-1">
 								<ClockIcon class="h-4 w-4" />
 								<span>{timeAgo(summary.$createdAt)}</span>
 							</div>
 							<div class="flex items-center gap-1">
 								<EyeIcon class="h-4 w-4" />
-								<span>{summary.hits ?? 1} views</span>
+								<span>{summary.hits ?? 1} hits</span>
 							</div>
 						</div>
 					</div>
