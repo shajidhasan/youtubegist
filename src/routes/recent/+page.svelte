@@ -2,7 +2,6 @@
 	import { timeAgo } from '$lib/utils.js';
 	import ClockIcon from '@lucide/svelte/icons/clock';
 	import EyeIcon from '@lucide/svelte/icons/eye';
-	import VideoIcon from '@lucide/svelte/icons/video';
 	import type { PageData } from './$types.js';
 
 	interface RecentSummary {
