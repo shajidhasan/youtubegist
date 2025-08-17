@@ -14,20 +14,81 @@ Try it at **[youtubegist.com](https://youtubegist.com)**.
 
 ## Run locally
 
+Follow this step-by-step tutorial to set up youtubegist on your local machine:
+
+### 1. Clone the repository
+
 ```bash
-# Clone the repository
 git clone https://github.com/shajidhasan/youtubegist.git
 cd youtubegist
+```
 
-# Set environment variables
-mv .env.example .env && nano .env
+### 2. Set up Appwrite (Database & Auth)
 
+1. Go to [cloud.appwrite.io](https://cloud.appwrite.io) and create a free account
+2. Create a new project and note down your **Project ID**
+3. Under **Integrations**, find the **API keys** tab and create one with **Databases** permission.
+4. Navigate to **Databases** → **Create Database**
+   - Name it `main`
+5. Inside the `main` database, **Create Collection**:
+   - Name it `summaries`
+   - Add these **required attributes**:
+     - `title` (String, required)
+     - `summary` (String, required) 
+     - `keyPoints` (String, required)
+     - `keyTakeaway` (String, required)
+     - `coreTerms` (String, required)
+     - `videoId` (String, required)
+     - `meta` (JSON, required)
+     - `hits` (Integer, required, default: 1)
+
+### 3. Set up OpenRouter (AI Models)
+
+1. Go to [openrouter.ai](https://openrouter.ai) and create an account
+2. Navigate to **Keys** and create a new API key
+3. Choose a model for `OPENROUTER_MODEL` (there are many free options)
+
+### 4. Configure environment variables
+
+```bash
+# Copy the example environment file
+cp .env.example .env
+
+# Edit the environment file
+nano .env
+```
+
+Fill in the **required variables**:
+```env
+APPWRITE_PROJECT="your-project-id-from-step-2"
+APPWRITE_API_KEY="your-api-key-from-step-2" 
+OPENROUTER_API_KEY="your-openrouter-api-key"
+OPENROUTER_MODEL="meta-llama/llama-3.2-3b-instruct:free"
+NONCE_SECRET="any-random-32-character-string"
+```
+
+Optional variables (leave empty if not needed):
+```env
+PROXY_URI="" // A rotating proxy URI to bypass YouTube IP blocks (from webshare.io for example)
+FREE_TRANSCRIPT_ENDPOINT="" // I am using a transcript endpoint that I'm keeping a secret
+YOUTUBE_DATA_API_KEY="" // YouTube Data API Key for fetching data quickly
+```
+
+### 5. Install dependencies and run
+
+```bash
 # Install dependencies (you can use npm too)
 pnpm install
 
-# Start development server (or npm run dev)
+# Start development server
 pnpm dev
+
+# Or with npm
+npm install
+npm run dev
 ```
+
+The app will be available at `http://localhost:5173`
 
 ## Contributing
 
