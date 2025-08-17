@@ -31,14 +31,19 @@ const getVideoDataWithYouTubeAPI = async (videoId: string): Promise<VideoMeta> =
 };
 
 const getVideoDataWithInnertube = async (videoId: string): Promise<VideoMeta> => {
-	const proxyAgent = new ProxyAgent(PROXY_URI);
-
-	const innertube = await Innertube.create({
-		fetch: (input: RequestInfo | URL, init?: RequestInit) => {
-			return Platform.shim.fetch(input, { ...init, dispatcher: proxyAgent } as any)
-		},
+	const innertubeConfig: any = {
 		cache: new UniversalCache(false)
-	});
+	};
+
+	// Only use proxy if PROXY_URI is provided
+	if (PROXY_URI) {
+		const proxyAgent = new ProxyAgent(PROXY_URI);
+		innertubeConfig.fetch = (input: RequestInfo | URL, init?: RequestInit) => {
+			return Platform.shim.fetch(input, { ...init, dispatcher: proxyAgent } as any)
+		};
+	}
+
+	const innertube = await Innertube.create(innertubeConfig);
 
 	const info = await innertube.getInfo(videoId);
 
