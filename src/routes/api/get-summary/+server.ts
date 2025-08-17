@@ -9,6 +9,7 @@ import { ID } from 'node-appwrite';
 export const GET = async ({ url }) => {
     const videoId = url.searchParams.get('v');
     const nonce = url.searchParams.get('nonce');
+    const language = url.searchParams.get('lang') || 'en';
 
     if (!videoId || videoId.length !== 11) {
         return error(400, 'Bad YouTube video ID!');
@@ -22,7 +23,7 @@ export const GET = async ({ url }) => {
         // Time getVideoData
         const videoData = await getVideoData(videoId);
 
-        const unsavedSummaryData = await getSummary(videoData);
+        const unsavedSummaryData = await getSummary(videoData, language);
 
 
         const summaryData = await databases.createDocument<SummaryData>(
@@ -38,7 +39,8 @@ export const GET = async ({ url }) => {
                 coreTerms: unsavedSummaryData.coreTerms,
                 meta: JSON.stringify({
                     channelId: videoData.channelId,
-                    author: videoData.author
+                    author: videoData.author,
+                    language: language
                 })
             }
         );

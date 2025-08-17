@@ -38,13 +38,27 @@ const responseSchema = {
 	additionalProperties: false,
 };
 
-export const getSummary = async (videoData: VideoMeta) => {
+export const getSummary = async (videoData: VideoMeta, language: string = 'en') => {
 	try {
+		const languageNames: Record<string, string> = {
+			'en': 'English',
+			'ru': 'Russian',
+			'es': 'Spanish',
+			'fr': 'French',
+			'de': 'German',
+			'zh': 'Chinese',
+			'ja': 'Japanese',
+			'ko': 'Korean'
+		};
+
+		const targetLanguage = languageNames[language] || 'English';
+
 		const data = {
 			title: videoData.title,
 			description: videoData.description,
 			author: videoData.author,
-			transcript: videoData.transcript
+			transcript: videoData.transcript,
+			language: targetLanguage
 		};
 
 		const response = await openai.chat.completions.create({

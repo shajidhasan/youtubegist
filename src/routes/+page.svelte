@@ -3,10 +3,23 @@
 	import YoutubeIcon from '@lucide/svelte/icons/youtube';
 	import ZapIcon from '@lucide/svelte/icons/zap';
 	import LightbulbIcon from '@lucide/svelte/icons/lightbulb';
+	import LanguagesIcon from '@lucide/svelte/icons/languages';
 	import { goto } from '$app/navigation';
 	import { extractVideoId } from '$lib/utils';
 
 	let youtubeUrl = $state('');
+	let selectedLanguage = $state('en');
+
+	const languages = [
+		{ code: 'en', name: 'English' },
+		{ code: 'ru', name: 'Русский' },
+		{ code: 'es', name: 'Español' },
+		{ code: 'fr', name: 'Français' },
+		{ code: 'de', name: 'Deutsch' },
+		{ code: 'zh', name: '中文' },
+		{ code: 'ja', name: '日本語' },
+		{ code: 'ko', name: '한국어' }
+	];
 
 	let isValidUrl = $derived(youtubeUrl.trim() !== '' && extractVideoId(youtubeUrl) !== null);
 
@@ -14,7 +27,7 @@
 		e.preventDefault();
 		const videoId = extractVideoId(youtubeUrl);
 		if (videoId) {
-			goto(`watch?v=${videoId}`);
+			goto(`watch?v=${videoId}&lang=${selectedLanguage}`);
 		} else {
 			alert('Please enter a valid YouTube URL');
 		}
@@ -64,6 +77,22 @@
 					<!-- Hide text on small screens for a compact look -->
 					<span class="hidden md:inline">Get Summary</span>
 				</button>
+			</div>
+			
+			<!-- Language Selector -->
+			<div class="mt-4 flex items-center justify-center gap-3">
+				<div class="flex items-center gap-2 text-sm text-zinc-400">
+					<LanguagesIcon class="h-4 w-4" />
+					<span>Summary language:</span>
+				</div>
+				<select
+					bind:value={selectedLanguage}
+					class="rounded-lg border border-zinc-700 bg-zinc-800 px-3 py-2 text-sm text-zinc-100 transition-all duration-200 hover:border-zinc-600 focus:border-transparent focus:ring-2 focus:ring-red-500 focus:outline-none"
+				>
+					{#each languages as lang}
+						<option value={lang.code}>{lang.name}</option>
+					{/each}
+				</select>
 			</div>
 		</form>
 	</div>
