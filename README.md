@@ -69,9 +69,9 @@ NONCE_SECRET="any-random-32-character-string"
 
 Optional variables (leave empty if not needed):
 ```env
-PROXY_URI="" // A rotating proxy URI to bypass YouTube IP blocks (from webshare.io for example)
-FREE_TRANSCRIPT_ENDPOINT="" // I am using a transcript endpoint that I'm keeping a secret
-YOUTUBE_DATA_API_KEY="" // YouTube Data API Key for fetching data quickly
+PROXY_URI="" # A rotating proxy URI to bypass YouTube IP blocks (from webshare.io for example)
+FREE_TRANSCRIPT_ENDPOINT="" # I am using a transcript endpoint that I'm keeping a secret
+YOUTUBE_DATA_API_KEY="" # YouTube Data API Key for fetching data quickly
 ```
 
 ### 5. Install dependencies and run
